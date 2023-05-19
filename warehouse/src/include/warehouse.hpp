@@ -6,13 +6,12 @@
 #include "employee.hpp"
 #include "shelf.hpp"
 
-class warehouse
+class Warehouse
 {
 private:
-    /* data */
-public:
     std::vector<Employee> Employees;
+public:
 
-    warehouse();
+    Warehouse();
     void addEmployee(Employee employee);
 };
