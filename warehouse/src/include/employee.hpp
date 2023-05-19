@@ -4,6 +4,8 @@
 #include <list>
 #include <vector>
 
+
+
 class Employee
 {
 private:
@@ -14,9 +16,9 @@ public:
     bool forkliftCertificate;
     Employee();
     Employee(std::string name, bool forkliftCertificate);
-    std::string getName();
-    bool getBusy();
+    std::string getName() const;
+    bool getBusy() const;
     void setBusy(bool busy);
-    bool getForkliftCertified();
-    void setForkliftCertificate(bool forkliftCertificate)
+    bool getForkliftCertified() const;
+    void setForkliftCertificate(bool forkliftCertificate);
 };
