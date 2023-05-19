@@ -13,10 +13,10 @@ public:
     int itemCount;
     int itemCapacity;
     Pallet();
-    Pallet(std::string name, int itemCapacity, int itemCount);
-    std::string getItemName();
-    int getItemCount();
-    int getRemainingSpace();
+    Pallet(std::string itemName, int itemCapacity, int itemCount);
+    std::string getItemName() const;
+    int getItemCount() const;
+    int getRemainingSpace() const;
     bool relocateEmptyPallet(std::string itemName, int itemCapacity);
     bool takeOne();
     bool putOne();
