@@ -5,6 +5,10 @@
 #include <vector>
 #include "include/pallet.hpp"
 
+Pallet::Pallet(){
+    
+}
+
 Pallet::Pallet(std::string itemName, int itemCapacity, int itemCount)
 {
     this->itemName = itemName;
@@ -45,5 +49,5 @@ bool Pallet::putOne()
 {
     // Simply add 1 to the total item count
     itemCount = itemCount + 1;
-    return 1
+    return 1;
 }

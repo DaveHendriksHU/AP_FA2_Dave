@@ -11,14 +11,15 @@ class Employee
 private:
     std::string name;
 
+
 public:
     bool busy;
     bool forkliftCertificate;
     Employee();
     Employee(std::string name, bool forkliftCertificate);
-    std::string getName() const;
-    bool getBusy() const;
+    std::string getName();
+    bool getBusy();
     void setBusy(bool busy);
-    bool getForkliftCertified() const;
+    bool getForkliftCertified();
     void setForkliftCertificate(bool forkliftCertificate);
 };

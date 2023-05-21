@@ -2,12 +2,16 @@
 #include <string>
 #include <list>
 #include <vector>
-#include "shelf.hpp"
+#include "include/shelf.hpp"
+
+Shelf::Shelf(){
+    
+}
 
 bool Shelf::swapPallet(int slot1, int slot2){
 
-    if (Pallets[slot1].getItemCount() > Pallets[slot2].getItemCount()){
-        std::swap(Pallets[slot1], Pallets[slot2]);
+    if (pallets[slot1].getItemCount() > pallets[slot2].getItemCount()){
+        std::swap(pallets[slot1], pallets[slot2]);
         return 1;
     }else{
         return 0;

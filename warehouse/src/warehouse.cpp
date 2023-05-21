@@ -5,7 +5,23 @@
 #include "include/warehouse.hpp"
 #include "employee.cpp"
 
-void Warehouse::addEmployee(Employee employee){
+Warehouse::Warehouse()
+{
+}
+void Warehouse::addEmployee(Employee employee)
+{
     // adds the employee to the vector
     Employees.push_back(employee);
+}
+void Warehouse::addShelf(Shelf shelf)
+{
+    shelves.push_back(shelf);
+}
+bool Warehouse::rearrangeShelf(Shelf &shelf)
+{
+    return 0;
+}
+bool Warehouse::pickItems(std::string itemName, int itemCount)
+{
+    return 0;
 }
