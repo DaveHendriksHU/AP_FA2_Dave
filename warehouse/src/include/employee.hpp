@@ -19,5 +19,5 @@ public:
     bool getBusy();
     void setBusy(bool busy);
     bool getForkliftCertified();
-    void setForkliftCertificate(bool forkliftCertificate);
+    void setForkliftCertificate(bool forkliftcertificate);
 };

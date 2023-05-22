@@ -111,6 +111,37 @@ TEST_CASE("Check the isFull override from icontainer on the pullet"){
 //Test Case's Employee
 //##############################################
 
-Test_CASE("Get the name of a employee"){
-    Employee()
+TEST_CASE("Get the name of a employee"){
+    Employee e1 = Employee("Co",1);
+    Employee e2 = Employee("Henk",1);
+    Employee e3 = Employee("Marco",0);
+
+    REQUIRE(e1.getName() == "Co");
+    REQUIRE(e2.getName() == "Henk");
+    REQUIRE(e3.getName() == "Marco");
+
+
+}
+
+TEST_CASE("Getting forklift certified info from employee"){
+    Employee e1 = Employee("Co",1);
+    Employee e2 = Employee("Henk",1);
+    Employee e3 = Employee("Marco",0);
+
+    REQUIRE(e1.getForkliftCertified() == 1);
+    REQUIRE(e2.getForkliftCertified() == 1);
+    REQUIRE(e3.getForkliftCertified() == 0);
+}
+
+TEST_CASE("Setting forklift certified information for a employee"){
+    Employee e1 = Employee("Co",1);
+    Employee e2 = Employee("Henk",1);
+    Employee e3 = Employee("Marco",0);
+
+    e1.setForkliftCertificate(0);
+    e2.setForkliftCertificate(0);
+    e3.setForkliftCertificate(1);
+    REQUIRE(e1.getForkliftCertified() == 0);
+    REQUIRE(e2.getForkliftCertified() == 0);
+    REQUIRE(e3.getForkliftCertified() == 1);
 }
