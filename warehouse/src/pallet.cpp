@@ -29,7 +29,17 @@ int Pallet::getRemainingSpace() const
 }
 bool Pallet::relocateEmptyPallet(std::string itemName, int itemCapacity)
 {
-    // TODO ME NO UNDERSTAND
+    if (itemCount == 0)
+    {
+        this->itemName = itemName;
+        this->itemCapacity = itemCapacity;
+
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 bool Pallet::takeOne()
 {
@@ -53,21 +63,25 @@ bool Pallet::putOne()
     itemCount = itemCount + 1;
     return 1;
 }
-bool Pallet::isEmpty(){
+bool Pallet::isEmpty()
+{
     if (itemCount == 0)
     {
-        return 1;
+        return true;
     }
     else
     {
-        return 0;
+        return false;
     }
 }
-
-bool Pallet::isFull(){
-    if(itemCount == itemCapacity){
-        return 1;
-    }else{
-        return 0;
+bool Pallet::isFull()
+{
+    if (itemCount == itemCapacity)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }

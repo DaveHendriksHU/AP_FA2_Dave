@@ -2,3 +2,7 @@
 #include "include/catch.hpp"
 
 // Find all tests in test*.cpp in test/
+
+TEST_CASE("test"){
+    REQUIRE(0==0);
+}

@@ -2,7 +2,7 @@ class Icontainer
 {
 
 public:
-    bool isEmpty();
-    bool isFull();
+    virtual bool isEmpty() = 0;
+    virtual bool isFull() = 0;
 };
 

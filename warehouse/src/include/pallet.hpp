@@ -5,7 +5,7 @@
 #include <vector>
 #include "Icontainer.hpp"
 
-class Pallet: public Icontainer
+class Pallet : public Icontainer 
 {
 private:
     std::string itemName;
