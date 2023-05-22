@@ -4,8 +4,6 @@
 #include <list>
 #include <vector>
 
-
-
 class Employee
 {
 private:

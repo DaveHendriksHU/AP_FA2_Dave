@@ -5,7 +5,7 @@
 #include "include/employee.hpp"
 
 Employee::Employee(){
-    
+
 }
 
 Employee::Employee(std::string name, bool forkliftCertificate){

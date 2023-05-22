@@ -3,8 +3,9 @@
 #include <string>
 #include <list>
 #include <vector>
+#include "Icontainer.hpp"
 
-class Pallet
+class Pallet: public Icontainer
 {
 private:
     std::string itemName;
@@ -20,4 +21,6 @@ public:
     bool relocateEmptyPallet(std::string itemName, int itemCapacity);
     bool takeOne();
     bool putOne();
+    bool isEmpty() override;
+    bool isFull() override;
 };

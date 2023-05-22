@@ -8,12 +8,12 @@ CXXFLAGS = -std=c++23 -Wall
 LDFLAGS = 
 
 # Makefile settings - Can be customized.
-APPNAME = test
+APPNAME = main
 EXT = .cpp
 SRCDIR = src
 OBJDIR = obj
 
-TESTAPPNAME = test
+TESTAPPNAME = testfa2
 TESTSRCDIR = test
 TESTOBJDIR = testobj
 

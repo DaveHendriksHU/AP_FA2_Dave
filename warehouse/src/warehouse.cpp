@@ -3,7 +3,7 @@
 #include <list>
 #include <vector>
 #include "include/warehouse.hpp"
-#include "employee.cpp"
+#include "include/employee.hpp"
 
 Warehouse::Warehouse()
 {
@@ -15,9 +15,10 @@ void Warehouse::addEmployee(Employee employee)
 }
 void Warehouse::addShelf(Shelf shelf)
 {
+    // adds a shelf to to the total amount of shelves
     shelves.push_back(shelf);
 }
-bool Warehouse::rearrangeShelf(Shelf &shelf)
+bool Warehouse::rearrangeShelf(Shelf& shelf)
 {
     return 0;
 }
