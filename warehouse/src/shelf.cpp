@@ -10,7 +10,6 @@ Shelf::Shelf()
     {
         pallets[i] = Pallet();
     }
-    
 }
 
 bool Shelf::swapPallet(int slot1, int slot2)
@@ -28,23 +27,32 @@ bool Shelf::swapPallet(int slot1, int slot2)
 }
 bool Shelf::isEmpty()
 {
-    if (pallets.size() == 0)
+    // Loops over all the pallets
+    for (const auto& pallet : pallets)
     {
-        return true;
+        // Checks if the pallet has a item count higher than 0.
+        if (pallet.getItemCount() != 0)
+        {
+            // if one is found higher than 0, Return False.
+            return false; 
+        }
     }
-    else
-    {
-        return false;
-    }
+    // Returns True if all the pallets have a itemcount of 0
+    return true; 
+}
 }
 bool Shelf::isFull()
 {
-    if (pallets.size() == 4)
+    // Loops over all the pallets
+    for (const auto& pallet : pallets)
     {
-        return true;
+        // Checks if one of the pallet still has remaining space.
+        if (pallet.getRemainingSpace() != 0)
+        {
+            // One Pallet is not filled yet.
+            return false; 
+        }
     }
-    else
-    {
-        return false;
-    }
+    // all Pallets are full.
+    return true; 
 };
