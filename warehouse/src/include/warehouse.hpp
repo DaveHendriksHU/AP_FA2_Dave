@@ -9,8 +9,9 @@
 class Warehouse
 {
 private:
-    std::vector<Employee> Employees;
+    // std::vector<Employee> Employees;
 public:
+    std::vector<Employee> Employees;
     std::vector<Shelf> shelves;
 
     Warehouse();

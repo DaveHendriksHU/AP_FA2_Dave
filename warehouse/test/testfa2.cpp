@@ -232,3 +232,10 @@ TEST_CASE("Testing of swapping the pallets"){
     REQUIRE(filledShelf.pallets[2].getItemName() == "Boxes");
 
 }
+
+
+//#########################
+// Test Cases Ware house
+//#########################
+
+
