@@ -6,6 +6,7 @@
 
 Shelf::Shelf()
 {
+    // Create 4 empty pallets
     for (int i = 0; i < 4; i++)
     {
         pallets[i] = Pallet();
@@ -15,14 +16,17 @@ Shelf::Shelf()
 bool Shelf::swapPallet(int slot1, int slot2)
 {
 
+    // Checks if the first slot pallet has a higher item count than slot 2.
     if (pallets[slot1].getItemCount() > pallets[slot2].getItemCount())
     {
+        // If true swap the 2 from place and return True
         std::swap(pallets[slot1], pallets[slot2]);
-        return 1;
+        return true;
     }
     else
     {
-        return 0;
+        // Return false if the above statment is not true
+        return false;
     }
 }
 bool Shelf::isEmpty()
@@ -40,7 +44,7 @@ bool Shelf::isEmpty()
     // Returns True if all the pallets have a itemcount of 0
     return true; 
 }
-}
+
 bool Shelf::isFull()
 {
     // Loops over all the pallets

@@ -2,6 +2,7 @@
 #include "include/catch.hpp"
 #include "include/pallet.hpp"
 #include "include/employee.hpp"
+#include "include/shelf.hpp"
 
 // Find all tests in test*.cpp in test/
 
@@ -159,4 +160,75 @@ TEST_CASE("Get Busy and set busy for Employee"){
     REQUIRE(e1.getBusy() == 1);
     REQUIRE(e2.getBusy() == 0);
     REQUIRE(e3.getBusy() == 1);
+}
+
+//###################################
+//Shelf Test Cases.
+//###################################
+TEST_CASE("Make Empty pallets in shelf"){
+    Shelf emptyShelf = Shelf();
+
+    // Loops over every  pallet in the shelf
+    for (int i = 0; i < 4; i++)
+    {
+        // Test for every pallet if it meets the requirments
+        REQUIRE(emptyShelf.pallets[i].getItemName() == "");
+        REQUIRE(emptyShelf.pallets[i].getItemCount() == 0);
+        REQUIRE(emptyShelf.pallets[i].getRemainingSpace() == 50);
+    }
+}
+
+TEST_CASE("Test the isEmpty function on Shelves."){
+    Shelf emptyShelf = Shelf();
+    Shelf filledShelf = Shelf();
+    filledShelf.pallets = {
+        Pallet("Books", 100, 15), 
+        Pallet("Boxes", 100, 20), 
+        Pallet("Books", 100, 5), 
+        Pallet("Boxes", 100, 30)
+    };
+
+    REQUIRE(emptyShelf.isEmpty() == 1);
+    REQUIRE(filledShelf.isEmpty() == 0);
+
+}
+
+TEST_CASE(){
+    Shelf emptyShelf = Shelf();
+    Shelf filledShelf = Shelf();
+    filledShelf.pallets = {
+        Pallet("Books", 100, 15), 
+        Pallet("Boxes", 100, 20), 
+        Pallet("Books", 100, 5), 
+        Pallet("Boxes", 100, 30)
+    };
+    Shelf FullShelf = Shelf();
+    FullShelf.pallets = {
+        Pallet("Books", 100, 100), 
+        Pallet("Boxes", 100, 100), 
+        Pallet("Books", 100, 100), 
+        Pallet("Boxes", 100, 100)
+    };
+
+    REQUIRE(emptyShelf.isFull() == 0);
+    REQUIRE(filledShelf.isFull() == 0);
+    REQUIRE(FullShelf.isFull() == 1);
+}
+
+TEST_CASE("Testing of swapping the pallets"){
+    Shelf filledShelf = Shelf();
+    filledShelf.pallets = {
+        Pallet("Books", 100, 15), 
+        Pallet("Boxes", 100, 20), 
+        Pallet("Candys", 100, 5), 
+        Pallet("Bikes", 100, 30)
+    };
+    // Try to swap item 0 and 1 should fail And try 1 and 2 should succeed.
+    REQUIRE(filledShelf.swapPallet(0,1) == 0);
+    REQUIRE(filledShelf.swapPallet(1,2) == 1);
+
+    // Check if the places have been switched
+    REQUIRE(filledShelf.pallets[1].getItemName() == "Candys");
+    REQUIRE(filledShelf.pallets[2].getItemName() == "Boxes");
+
 }
