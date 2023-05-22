@@ -2,7 +2,8 @@
 
 #include "../src/include/warehouse.hpp"
 #include <iostream>
-/*
+
+/**
 ///////////////////////////////////////////////////////////////
 //                                                           //
 //                    Warehouse unittests                    //

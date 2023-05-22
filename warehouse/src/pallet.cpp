@@ -6,13 +6,16 @@
 
 Pallet::Pallet()
 {
+    this->itemName = "";
+    this->itemCount = 0;
+    this->itemCapacity = 50;
 }
 
 Pallet::Pallet(std::string itemName, int itemCapacity, int itemCount)
 {
     this->itemName = itemName;
     this->itemCapacity = itemCapacity;
-    this->itemName = itemCount;
+    this->itemCount = itemCount;
 }
 
 std::string Pallet::getItemName() const
@@ -59,9 +62,17 @@ bool Pallet::takeOne()
 }
 bool Pallet::putOne()
 {
-    // Simply add 1 to the total item count
-    itemCount = itemCount + 1;
-    return 1;
+    // Check if the itemcount is already add itemCapacity
+    if (itemCount == itemCapacity)
+    {
+        return 0;
+    }
+    else
+    {
+        // Simply add 1 to the total item count
+        itemCount = itemCount + 1;
+        return 1;
+    }
 }
 bool Pallet::isEmpty()
 {

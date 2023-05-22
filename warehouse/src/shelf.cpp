@@ -6,6 +6,11 @@
 
 Shelf::Shelf()
 {
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     pallets[i] = Pallet();
+    // }
+    
 }
 
 bool Shelf::swapPallet(int slot1, int slot2)

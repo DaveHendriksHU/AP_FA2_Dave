@@ -11,6 +11,7 @@ private:
     std::string itemName;
 
 public:
+    // std::string itemName;
     int itemCount;
     int itemCapacity;
     Pallet();

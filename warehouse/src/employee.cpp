@@ -11,6 +11,7 @@ Employee::Employee(){
 Employee::Employee(std::string name, bool forkliftCertificate){
     this->name = name;
     this->forkliftCertificate = forkliftCertificate;
+    this->busy = 0;
 }
 std::string Employee::getName(){
     return name;
