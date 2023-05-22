@@ -13,21 +13,21 @@ int main(void){
 
     // Shelf emptyShelf = Shelf();
 
-    Warehouse warehouse = Warehouse();
-    Shelf shelf1 = Shelf();
-    shelf1.pallets = {
-        Pallet("Books", 100, 20), 
-        Pallet("Candys", 100, 40), 
-        Pallet("Books", 100, 30), 
-        Pallet("Bikes", 100, 10)
-    };
-    warehouse.addShelf(shelf1);
-    warehouse.pickItems("Books",50);
+    // Warehouse warehouse = Warehouse();
+    // Shelf shelf1 = Shelf();
+    // shelf1.pallets = {
+    //     Pallet("Books", 100, 20), 
+    //     Pallet("Candys", 100, 40), 
+    //     Pallet("Books", 100, 30), 
+    //     Pallet("Bikes", 100, 10)
+    // };
+    // warehouse.addShelf(shelf1);
+    // warehouse.pickItems("Books",50);
 
-    for (int i = 0; i < 4; i++)
-    {
-        std::cout << warehouse.shelves[0].pallets[i].getItemCount() << std::endl;
-    }
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     std::cout << warehouse.shelves[0].pallets[i].getItemCount() << std::endl;
+    // }
 
     // Shelf filledShelf = Shelf();
     // filledShelf.pallets = {
