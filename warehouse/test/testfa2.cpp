@@ -3,6 +3,7 @@
 #include "include/pallet.hpp"
 #include "include/employee.hpp"
 #include "include/shelf.hpp"
+#include "include/warehouse.hpp"
 
 // Find all tests in test*.cpp in test/
 
@@ -239,3 +240,18 @@ TEST_CASE("Testing of swapping the pallets"){
 //#########################
 
 
+// TEST_CASE("Test Pick items"){
+//     Warehouse warehouse = Warehouse();
+//     Shelf shelf1 = Shelf();
+//     shelf1.pallets = {
+//         Pallet("Books", 100, 20), 
+//         Pallet("Candys", 100, 40), 
+//         Pallet("Books", 100, 30), 
+//         Pallet("Bikes", 100, 10)
+//     };
+//     warehouse.pickItems("Books",50);
+
+//     REQUIRE(warehouse.shelves[0].pallets[0].getItemCount() == 0);
+//     REQUIRE(warehouse.shelves[0].pallets[2].getItemCount() == 0);
+
+// }

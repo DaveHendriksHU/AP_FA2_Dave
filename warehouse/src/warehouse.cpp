@@ -37,9 +37,9 @@ bool Warehouse::rearrangeShelf(Shelf &shelf)
             // From the swapPallet function.
             for (int i = 0; i < 3; ++i)
             {
-                // If the function actually swaps pallets 
+                // If the function actually swaps pallets
                 if (shelf.swapPallet(i, i + 1) == true)
-                {   
+                {
                     // Set swapped back to true if the above statment is true.
                     swapped = true;
                 }
@@ -53,5 +53,46 @@ bool Warehouse::rearrangeShelf(Shelf &shelf)
 }
 bool Warehouse::pickItems(std::string itemName, int itemCount)
 {
-    return 0;
+    int amountOfItemsInStorage = 0;
+    for (const Pallet& pallet : shelves[0].pallets)
+    {
+        // Check if the pallet has the desired item name
+        if (pallet.getItemName() == itemName)
+        {
+            // Add the item count to the total
+            amountOfItemsInStorage += pallet.getItemCount();
+        }
+    }
+    
+    // Check if the requested itemCount is valid and there are enough items in storage
+    if (itemCount <= 0 || amountOfItemsInStorage < itemCount)
+    {
+        return false;
+    }
+    
+    // Loop over each pallet
+    for (Pallet& pallet : shelves[0].pallets)
+    {
+        // Check if the pallet has the item name in it.
+        if (pallet.getItemName() == itemName)
+        {
+            // Here we take items from the pallet until one of the two reaches Zero.
+            // This means that either we have collected enough items from the pallet, Or there are no items left on the pallet.
+            while (itemCount > 0 && pallet.getItemCount() > 0)
+            {
+                // Here we update the itemCount from the pallet. this wil return true.
+                if (pallet.takeOne() == true)
+                {
+                    // Here We lower the count of the itemCount given as a parameter in the function.
+                    itemCount--;
+                }
+            }
+        }
+        
+        // Check if we have taken enough items
+        if (itemCount == 0)
+        {
+            return true;
+        }
+    }
 }
