@@ -6,10 +6,10 @@
 
 Shelf::Shelf()
 {
-    // for (int i = 0; i < 4; i++)
-    // {
-    //     pallets[i] = Pallet();
-    // }
+    for (int i = 0; i < 4; i++)
+    {
+        pallets[i] = Pallet();
+    }
     
 }
 

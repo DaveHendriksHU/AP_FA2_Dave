@@ -120,7 +120,6 @@ TEST_CASE("Get the name of a employee"){
     REQUIRE(e2.getName() == "Henk");
     REQUIRE(e3.getName() == "Marco");
 
-
 }
 
 TEST_CASE("Getting forklift certified info from employee"){
@@ -144,4 +143,20 @@ TEST_CASE("Setting forklift certified information for a employee"){
     REQUIRE(e1.getForkliftCertified() == 0);
     REQUIRE(e2.getForkliftCertified() == 0);
     REQUIRE(e3.getForkliftCertified() == 1);
+}
+
+TEST_CASE("Get Busy and set busy for Employee"){
+    Employee e1 = Employee("Co",1);
+    Employee e2 = Employee("Henk",1);
+    Employee e3 = Employee("Marco",0);
+
+    REQUIRE(e1.getBusy() == 0);
+    REQUIRE(e2.getBusy() == 0);
+    REQUIRE(e3.getBusy() == 0);
+    e1.setBusy(1);
+    e2.setBusy(0);
+    e3.setBusy(1);
+    REQUIRE(e1.getBusy() == 1);
+    REQUIRE(e2.getBusy() == 0);
+    REQUIRE(e3.getBusy() == 1);
 }

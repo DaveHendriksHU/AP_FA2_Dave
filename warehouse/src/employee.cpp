@@ -20,7 +20,7 @@ bool Employee::getBusy(){
     return busy;
 }
 void Employee::setBusy(bool busy){
-    busy = busy;
+    this->busy = busy;
 }
 bool Employee::getForkliftCertified(){
     return forkliftCertificate;
