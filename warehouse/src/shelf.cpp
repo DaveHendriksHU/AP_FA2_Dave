@@ -4,6 +4,10 @@
 #include <vector>
 #include "include/shelf.hpp"
 
+/**
+ * @brief Construct a new Shelf:: Shelf object with empty pallets
+ * 
+ */
 Shelf::Shelf()
 {
     // Create 4 empty pallets
@@ -13,6 +17,14 @@ Shelf::Shelf()
     }
 }
 
+/**
+ * @brief Swaps 2 pallets if the first has a higher item count than the other one.
+ * 
+ * @param slot1 pallet number 1
+ * @param slot2 pallet numeber 2
+ * @return true if swapping the 2 pallets is done.
+ * @return false  if we can't swap the 2 pallets.
+ */
 bool Shelf::swapPallet(int slot1, int slot2)
 {
 
@@ -29,6 +41,12 @@ bool Shelf::swapPallet(int slot1, int slot2)
         return false;
     }
 }
+/**
+ * @brief Checks if the shelf is full of empty pallets
+ * 
+ * @return true if the shelf is indeed empty
+ * @return false if the shelf still has a pallet with the item on it.
+ */
 bool Shelf::isEmpty()
 {
     // Loops over all the pallets
@@ -45,6 +63,13 @@ bool Shelf::isEmpty()
     return true; 
 }
 
+
+/**
+ * @brief Will check if all the pallets have adleast some items on it.
+ * 
+ * @return true if all pallets have adleast one item.
+ * @return false if there is a pallet with zero items on it.
+ */
 bool Shelf::isFull()
 {
     // Loops over all the pallets

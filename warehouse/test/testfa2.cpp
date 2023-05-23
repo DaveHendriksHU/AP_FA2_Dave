@@ -6,11 +6,6 @@
 #include "include/warehouse.hpp"
 
 // Find all tests in test*.cpp in test/
-
-TEST_CASE("test")
-{
-    REQUIRE(0 == 0);
-}
 // ############################################
 //  Pallet Test Cases.
 // ############################################
@@ -293,7 +288,8 @@ TEST_CASE("4 Pallets Take all items")
     REQUIRE(warehouse.shelves[0].pallets[3].getItemCount() == 0);
 }
 
-TEST_CASE("Take all items from more than just one shelf"){
+TEST_CASE("Take all items from more than just one shelf")
+{
     Warehouse warehouse = Warehouse();
     Shelf shelf1 = Shelf();
     shelf1.pallets = {
@@ -308,18 +304,62 @@ TEST_CASE("Take all items from more than just one shelf"){
         Pallet("Books", 100, 30),
         Pallet("Books", 100, 10)};
 
-
     warehouse.addShelf(shelf1);
     warehouse.addShelf(shelf2);
-
-    REQUIRE(warehouse.pickItems("Books", 200));
-
-    for (int i = 0; i < 2; i++){
-        // loop
+    REQUIRE(warehouse.pickItems("Books", 200) == true);
+    // Loops trough all the Shelves in the warehouse
+    for (int i = 0; i < 2; i++)
+    {
+        // loop trouh all the pallets in the shelf
         for (int j = 0; j < 4; j++)
         {
             // Test for every pallet if it meets the requirments
             REQUIRE(warehouse.shelves[i].pallets[j].getItemCount() == 0);
         }
     }
+}
+
+
+TEST_CASE("Try and take more then in storage")
+{
+    Warehouse warehouse = Warehouse();
+    Shelf shelf1 = Shelf();
+    shelf1.pallets = {
+        Pallet("Books", 100, 20),
+        Pallet("Books", 100, 40),
+        Pallet("Books", 100, 30),
+        Pallet("Books", 100, 10)};
+    Shelf shelf2 = Shelf();
+    shelf2.pallets = {
+        Pallet("Books", 100, 20),
+        Pallet("Books", 100, 40),
+        Pallet("Books", 100, 30),
+        Pallet("Books", 100, 10)};
+
+    warehouse.addShelf(shelf1);
+    warehouse.addShelf(shelf2);
+    // Try and take more then in storage
+    REQUIRE(warehouse.pickItems("Books", 201) == false);
+}
+
+TEST_CASE("Try and take a item that is not in a shelf")
+{
+    Warehouse warehouse = Warehouse();
+    Shelf shelf1 = Shelf();
+    shelf1.pallets = {
+        Pallet("Books", 100, 20),
+        Pallet("Books", 100, 40),
+        Pallet("Books", 100, 30),
+        Pallet("Books", 100, 10)};
+    Shelf shelf2 = Shelf();
+    shelf2.pallets = {
+        Pallet("Books", 100, 20),
+        Pallet("Books", 100, 40),
+        Pallet("Books", 100, 30),
+        Pallet("Books", 100, 10)};
+
+    warehouse.addShelf(shelf1);
+    warehouse.addShelf(shelf2);
+    // Try and take more then in storage
+    REQUIRE(warehouse.pickItems("Bike", 34) == false);
 }

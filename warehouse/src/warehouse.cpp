@@ -5,20 +5,42 @@
 #include "include/warehouse.hpp"
 #include "include/employee.hpp"
 
+/**
+ * @brief Construct a new Warehouse:: Warehouse object
+ * 
+ */
 Warehouse::Warehouse()
 {
 }
+
+/**
+ * @brief 
+ * 
+ * @param employee The employee that needs to be added
+ */
 void Warehouse::addEmployee(Employee employee)
 {
     // adds the employee to the vector
     Employees.push_back(employee);
 }
+/**
+ * @brief The function AddShelf will add a shelf to the warehouse
+ * 
+ * @param shelf The shelf that need to be added 
+ */
 void Warehouse::addShelf(Shelf shelf)
 {
     // adds a shelf to to the total amount of shelves
     shelves.push_back(shelf);
 }
-bool Warehouse::rearrangeShelf(Shelf &shelf)
+/**
+ * @brief The funtion rearangeShelf() Will sort the pallets from lowest to highest itemcount.
+ * 
+ * @param shelf Gives a pointer to a specific shelf in the warehouse.
+ * @return true will be returned if all the pallets are correctly sorted.
+ * @return false Will returned if the employee is busy or not certified.
+ */
+bool Warehouse::rearrangeShelf(Shelf& shelf)
 {
     // Chat Gpt helped out on this function :)
     //  Checks if the employee is certified and not busy.
@@ -51,6 +73,15 @@ bool Warehouse::rearrangeShelf(Shelf &shelf)
     // return False
     return false;
 }
+
+/**
+ * @brief The Function PickItems will pick items out of pallets that match the itemName.
+ * 
+ * @param itemName Name from the items that needs to be picked.
+ * @param itemCount Amount that needs to be picked from the item.
+ * @return true Wil be returned if there where enough items found to be picked.
+ * @return false Wil be returned if There are not enough items or the item does not exist
+ */
 bool Warehouse::pickItems(std::string itemName, int itemCount)
 {
     int amountOfItemsInStorage = 0;
