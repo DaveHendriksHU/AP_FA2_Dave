@@ -54,45 +54,51 @@ bool Warehouse::rearrangeShelf(Shelf &shelf)
 bool Warehouse::pickItems(std::string itemName, int itemCount)
 {
     int amountOfItemsInStorage = 0;
-    for (const Pallet& pallet : shelves[0].pallets)
+    for (Shelf& shelf : shelves)
     {
-        // Check if the pallet has the desired item name
-        if (pallet.getItemName() == itemName)
+        for (const Pallet& pallet : shelf.pallets)
         {
-            // Add the item count to the total
-            amountOfItemsInStorage += pallet.getItemCount();
+            // Check if the pallet has the desired item name
+            if (pallet.getItemName() == itemName)
+            {
+                // Add the item count to the total
+                amountOfItemsInStorage += pallet.getItemCount();
+            }
         }
     }
-    
     // Check if the requested itemCount is valid and there are enough items in storage
     if (itemCount <= 0 || amountOfItemsInStorage < itemCount)
     {
         return false;
     }
-    
-    // Loop over each pallet
-    for (Pallet& pallet : shelves[0].pallets)
+
+    // loop over each shelf
+    for (Shelf& shelf : shelves)
     {
-        // Check if the pallet has the item name in it.
-        if (pallet.getItemName() == itemName)
+        // Loop over each pallet
+        for (Pallet& pallet : shelf.pallets)
         {
-            // Here we take items from the pallet until one of the two reaches Zero.
-            // This means that either we have collected enough items from the pallet, Or there are no items left on the pallet.
-            while (itemCount > 0 && pallet.getItemCount() > 0)
+            // Check if the pallet has the item name in it.
+            if (pallet.getItemName() == itemName)
             {
-                // Here we update the itemCount from the pallet. this wil return true.
-                if (pallet.takeOne() == true)
+                // Here we take items from the pallet until one of the two reaches Zero.
+                // This means that either we have collected enough items from the pallet, Or there are no items left on the pallet.
+                while (itemCount > 0 && pallet.getItemCount() > 0)
                 {
-                    // Here We lower the count of the itemCount given as a parameter in the function.
-                    itemCount--;
+                    // Here we update the itemCount from the pallet. this wil return true.
+                    if (pallet.takeOne() == true)
+                    {
+                        // Here We lower the count of the itemCount given as a parameter in the function.
+                        itemCount--;
+                    }
                 }
             }
-        }
-        
-        // Check if we have taken enough items
-        if (itemCount == 0)
-        {
-            return true;
+            
+            // Check if we have taken enough items
+            if (itemCount == 0)
+            {
+                return true;
+            }
         }
     }
 }

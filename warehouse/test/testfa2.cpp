@@ -292,3 +292,34 @@ TEST_CASE("4 Pallets Take all items")
     REQUIRE(warehouse.shelves[0].pallets[2].getItemCount() == 0);
     REQUIRE(warehouse.shelves[0].pallets[3].getItemCount() == 0);
 }
+
+TEST_CASE("Take all items from more than just one shelf"){
+    Warehouse warehouse = Warehouse();
+    Shelf shelf1 = Shelf();
+    shelf1.pallets = {
+        Pallet("Books", 100, 20),
+        Pallet("Books", 100, 40),
+        Pallet("Books", 100, 30),
+        Pallet("Books", 100, 10)};
+    Shelf shelf2 = Shelf();
+    shelf2.pallets = {
+        Pallet("Books", 100, 20),
+        Pallet("Books", 100, 40),
+        Pallet("Books", 100, 30),
+        Pallet("Books", 100, 10)};
+
+
+    warehouse.addShelf(shelf1);
+    warehouse.addShelf(shelf2);
+
+    REQUIRE(warehouse.pickItems("Books", 200));
+
+    for (int i = 0; i < 2; i++){
+        // loop
+        for (int j = 0; j < 4; j++)
+        {
+            // Test for every pallet if it meets the requirments
+            REQUIRE(warehouse.shelves[i].pallets[j].getItemCount() == 0);
+        }
+    }
+}
