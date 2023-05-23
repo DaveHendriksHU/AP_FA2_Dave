@@ -40,7 +40,7 @@ void Warehouse::addShelf(Shelf shelf)
  * @return true will be returned if all the pallets are correctly sorted.
  * @return false Will returned if the employee is busy or not certified.
  */
-bool Warehouse::rearrangeShelf(Shelf& shelf)
+bool Warehouse::rearrangeShelf(Shelf &shelf)
 {
     // Chat Gpt helped out on this function :)
     //  Checks if the employee is certified and not busy.
