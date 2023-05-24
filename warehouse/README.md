@@ -40,14 +40,26 @@ MANUEL / Help:
 MANIFEST:
 
     README.MD
-    main.exe
+    MakeFile
+    warehouse_uml.png
+    main.cpp
     folder:src
-        game.cpp
-        main.cpp
-        person.cpp
+        employee.cpp
+        pallet.cpp
+        shelf.cpp
+        warehouse.cpp
         folder:include
-            game.hpp
-            person.hpp
+            employee.hpp
+            Icontainer.hpp
+            pallet.hpp
+            shelf.hpp
+            warehouse.hpp
+    folder:test
+        testfa2.cpp
+        testWarehouse.cpp
+        folder:include
+            catch.hpp
+
 
 BUGS:
 
