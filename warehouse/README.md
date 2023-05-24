@@ -1,5 +1,11 @@
-AUTEUR:
+Warehouse Project Fa 2:
 
+ABOUT:
+    Dit project gaat over het maken van een warehouse met meerdere shelves die 4 pallets hebben.
+    De bedoeling is om eigen functies te maken en hier testen voor te schrijven om te bewijzen dat ze werken.
+    Daarnaast word er in de main een kleine demo gegeven dat de functies ook echt naar behoren werken.
+
+AUTEUR:
     Naam: Dave Hendriks
     Klas: V1A
     StudentenNummer : 1836238
