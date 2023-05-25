@@ -71,3 +71,7 @@ BUGS:
 
     1. Geen Bugs op dit moment bekend.
     2.Mocht u een bug tegen komen kunt u het melden door een mailtje te sturen naar dave.hendriks@student.hu.nl
+
+Sources Used:
+    - Chatgpt.
+    - Stackoverflow.
