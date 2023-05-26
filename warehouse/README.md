@@ -1,12 +1,15 @@
 Warehouse Project Fa 2:
+
     Warehouse project 2023
 
 ABOUT:
+
     Dit project gaat over het maken van een warehouse met meerdere shelves die 4 pallets hebben.
     De bedoeling is om eigen functies te maken en hier testen voor te schrijven om te bewijzen dat ze werken.
     Daarnaast word er in de main een kleine demo gegeven dat de functies ook echt naar behoren werken.
 
 AUTEUR:
+
     Naam: Dave Hendriks
     Klas: V1A
     StudentenNummer : 1836238
@@ -14,7 +17,6 @@ AUTEUR:
 INSTALL:
 
     1. Als er nog geen C++ is geinstalleerd is dat de eerste stap.
-
     2. clone de repository naar uw computer en pull dan alle bestanden van de main branch
     3. Open dan de Warehouse folder in uw code editor
     4. Er zijn 2 builds mogelijk in dit project.
@@ -36,6 +38,7 @@ INSTALL:
     5. Nu zou het mogelijk moeten zijn om een van de twee builds runnen.
 
 MANUEL / Help:
+
     1. Bij het runnen van de main build zult u veel print statments te zien krijgen
     2. De print statments zijn voorall daar om te demonstreren dat functies naar behoren werken.  
 
