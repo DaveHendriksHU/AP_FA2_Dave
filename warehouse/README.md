@@ -12,7 +12,9 @@ AUTEUR:
     StudentenNummer : 1836238
 
 INSTALL:
+
     1. Als er nog geen C++ is geinstalleerd is dat de eerste stap.
+
     2. clone de repository naar uw computer en pull dan alle bestanden van de main branch
     3. Open dan de Warehouse folder in uw code editor
     4. Er zijn 2 builds mogelijk in dit project.
@@ -38,6 +40,7 @@ MANUEL / Help:
     2. De print statments zijn voorall daar om te demonstreren dat functies naar behoren werken.  
 
 MANIFEST:
+
     README.MD
     MakeFile
     warehouse_uml.png
@@ -58,7 +61,10 @@ MANIFEST:
         testWarehouse.cpp
         folder:include
             catch.hpp
+
+
 BUGS:
+
     1. Geen Bugs op dit moment bekend.
     2.Mocht u een bug tegen komen kunt u het melden door een mailtje te sturen naar dave.hendriks@student.hu.nl
 
